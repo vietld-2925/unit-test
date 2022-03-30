@@ -9,18 +9,19 @@ class QuanAoHoanKiem extends Model
 {
     use HasFactory;
 
-    public function calculateDiscount($listProduct){
+    public function calculateDiscount($listProduct)
+    {
         $discount = 0;
-        if(!is_array($listProduct)) return $discount;
+        if (!is_array($listProduct)) return $discount;
 
-        if(count($listProduct)>=7){
+        if (count($listProduct) >= 7) {
             $discount += 7;
         }
 
-        if(
-            in_array('So Mi',$listProduct)
-            && in_array('Ca Vat',$listProduct)
-        ){
+        if (
+            in_array('So Mi', $listProduct)
+            && in_array('Ca Vat', $listProduct)
+        ) {
             $discount += 5;
         }
 

@@ -15,13 +15,13 @@ class BiaKeangnamTest extends TestCase
     public function testCalculatePrice()
     {
         $biaKeangnam = new BiaKeangnam();
-        $this->assertEquals(490,$biaKeangnam->calculatePrice('12:00', false, false));
-        $this->assertEquals(490,$biaKeangnam->calculatePrice('12:00', false, true));
-        $this->assertEquals(490,$biaKeangnam->calculatePrice('12:00', true, false));
-        $this->assertEquals(100,$biaKeangnam->calculatePrice('12:00', true, true));
-        $this->assertEquals(290,$biaKeangnam->calculatePrice('16:00', false, false));
-        $this->assertEquals(290,$biaKeangnam->calculatePrice('16:00', false, true));
-        $this->assertEquals(290,$biaKeangnam->calculatePrice('16:00', true, false));
-        $this->assertEquals(100,$biaKeangnam->calculatePrice('16:00', true, true));
+        $this->assertEquals(490, $biaKeangnam->calculatePrice('12:00', false, false));
+        $this->assertEquals(490, $biaKeangnam->calculatePrice('12:00', false, true));
+        $this->assertEquals(490, $biaKeangnam->calculatePrice('12:00', true, false));
+        $this->assertEquals(100, $biaKeangnam->calculatePrice('12:00', true, true));
+        $this->assertEquals(290, $biaKeangnam->calculatePrice('16:00', false, false));
+        $this->assertEquals(290, $biaKeangnam->calculatePrice('16:00', false, true));
+        $this->assertEquals(290, $biaKeangnam->calculatePrice('16:00', true, false));
+        $this->assertEquals(100, $biaKeangnam->calculatePrice('16:00', true, true));
     }
 }
