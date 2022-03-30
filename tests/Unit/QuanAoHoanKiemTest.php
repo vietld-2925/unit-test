@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+use App\Models\QuanAoHoanKiem;
 use PHPUnit\Framework\TestCase;
 
 class QuanAoHoanKiemTest extends TestCase
@@ -11,8 +12,12 @@ class QuanAoHoanKiemTest extends TestCase
      *
      * @return void
      */
-    public function test_example()
+    public function testCalculateDiscount()
     {
-        $this->assertTrue(true);
+        $quanAoHoanKiem = new QuanAoHoanKiem();
+        $this->assertEquals(7,$quanAoHoanKiem->calculateDiscount(['So Mi', 'Quan', 'Quan', 'Quan', 'Quan', 'Quan', 'Quan', 'Quan', 'Quan']));
+        $this->assertEquals(0,$quanAoHoanKiem->calculateDiscount(['So Mi', 'Quan', 'Quan', 'Quan', 'Quan']));
+        $this->assertEquals(5,$quanAoHoanKiem->calculateDiscount(['So Mi', 'Ca Vat', 'Quan']));
+        $this->assertEquals(12,$quanAoHoanKiem->calculateDiscount(['So Mi', 'Ca Vat', 'Quan', 'Quan', 'Quan', 'Quan', 'Quan', 'Quan', 'Quan']));
     }
 }
