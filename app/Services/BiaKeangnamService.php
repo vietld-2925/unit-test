@@ -26,7 +26,7 @@ class BiaKeangnamService
 
         $result = $data['price'];
 
-        if (preg_match("/^([0-2][0-3]):([0-5][0-9])$/", $time)) {
+        if (preg_match("/^([0-2])([0-9]):([0-5])([0-9])$/", $time)) {
             if ($time <= $data['promotion']['end'] && $time >= $data['promotion']['start']) {
                 $result = $data['promotion']['price'];
             }

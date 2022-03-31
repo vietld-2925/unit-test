@@ -62,4 +62,9 @@ class BiaKeangnamServiceTest extends TestCase
     {
         $this->assertEquals(100, $this->biaKeangnamService->calculatePrice('16:00', true, true));
     }
+
+    public function test_calculate_price_invalid_time()
+    {
+        $this->assertEquals(490, $this->biaKeangnamService->calculatePrice('11', true, true));
+    }
 }
