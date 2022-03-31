@@ -21,8 +21,7 @@ class QuanAoHoanKiemService
             $discount += 7;
         }
 
-        if (
-            in_array('So Mi', $listProduct)
+        if (in_array('So Mi', $listProduct)
             && in_array('Ca Vat', $listProduct)
         ) {
             $discount += 5;

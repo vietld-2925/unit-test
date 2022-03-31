@@ -23,14 +23,19 @@ class BiaKeangnamService
                 'price' => 290,
             ],
         ];
+
         $result = $data['price'];
-        if ($time <= $data['promotion']['end'] && $time >= $data['promotion']['start']) {
-            $result = $data['promotion']['price'];
+
+        if (preg_match("/^([0-2][0-3]):([0-5][0-9])$/", $time)) {
+            if ($time <= $data['promotion']['end'] && $time >= $data['promotion']['start']) {
+                $result = $data['promotion']['price'];
+            }
+
+            if ($hasVoucher && $isFirst) {
+                $result = $data['voucher'];
+            }
         }
 
-        if ($hasVoucher && $isFirst) {
-            $result = $data['voucher'];
-        }
         return $result;
     }
 }
